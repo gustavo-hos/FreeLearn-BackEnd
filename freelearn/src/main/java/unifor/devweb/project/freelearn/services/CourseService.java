@@ -19,7 +19,7 @@ import java.util.stream.Collectors;
 public class CourseService {
 
     private final CourseRepository courseRepository;
-    private final CourseMapper courseMapper;
+    private final CourseMapper courseMapper = CourseMapper.INSTANCE;
 
     public Page<CourseDTO> listAll(Pageable pageable) {
         return courseRepository.findAll(pageable)
